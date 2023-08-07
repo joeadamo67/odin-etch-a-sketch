@@ -91,6 +91,9 @@ const createBoard = (input) => {
               .replace(/ /g, "")
               .split(",");
             let temp = Number(scale[0])-26;
+            if (temp <0 ){
+              temp =0;
+            }
             boardPiece.style.backgroundColor = "rgb("+temp+", "+temp+", "+temp+")";
           }
           break;
@@ -112,6 +115,8 @@ resetButton.addEventListener("click", () => {
   const boardPiece = document.querySelectorAll(".boardPiece");
   boardPiece.forEach((element) => {
     element.classList.remove("clicked");
+    element.style.backgroundColor = "white";
+
   });
 });
 
